@@ -23,9 +23,9 @@ convertToPseudoBulk <-
             return.metadata = T){
     
     if(method == "agg"){
-      pbmc.agg <- Seurat::AggregateExpression(pbmc, return.seurat=F, group.by=groups, assays=assays, slot = "counts")
+      pbmc.agg <- Seurat::AggregateExpression(pbmc, return.seurat=F, group.by=groups, assays=assays, slot = slot)
     }else if(method == "avg"){
-      pbmc.agg <- Seurat::AverageExpression(pbmc, return.seurat=F, group.by=groups, assays=assays, slot = "counts")
+      pbmc.agg <- Seurat::AverageExpression(pbmc, return.seurat=F, group.by=groups, assays=assays, slot = slot)
     }else{
       stop("No valid aggregation method suplied. Use either 'agg' for sum or 'avg' for average expression of samples.")
     }
